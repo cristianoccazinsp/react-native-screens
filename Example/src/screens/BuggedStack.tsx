@@ -60,10 +60,10 @@ const StackNavigator = () => {
           ),
           gestureEnabled: false,
           cardOverlayEnabled: true,
-          // transitionSpec: {
-          //   open: animationConfig,
-          //   close: animationConfig,
-          // },
+          transitionSpec: {
+            open: animationConfig,
+            close: animationConfig,
+          },
         };
       }}>
       <Stack.Screen
@@ -92,9 +92,6 @@ const StackNavigator = () => {
         component={ScreenX}
         options={{
           title: 'Screen3',
-          headerShown: false,
-          animationEnabled: true,
-          detachPreviousScreen: false,
         }}
         initialParams={{ next: 'Screen4' }}
       />
