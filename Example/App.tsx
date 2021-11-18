@@ -25,6 +25,7 @@ import StackReactNavigation4 from './src/screens/StackReactNavigation4';
 import Modals from './src/screens/Modals';
 import Orientation from './src/screens/Orientation';
 import SearchBar from './src/screens/SearchBar';
+import BuggedStack from './src/screens/BuggedStack';
 
 import { enableFreeze } from 'react-native-screens';
 
@@ -147,26 +148,28 @@ const MainScreen = ({ navigation }: MainScreenProps): JSX.Element => (
 );
 
 const ExampleApp = (): JSX.Element => (
-  <NavigationContainer>
-    <Stack.Navigator
-      screenOptions={{
-        direction: I18nManager.isRTL ? 'rtl' : 'ltr',
-      }}>
-      <Stack.Screen
-        name="Main"
-        options={{ title: '📱 React Native Screens Examples' }}
-        component={MainScreen}
-      />
-      {Object.keys(SCREENS).map((name) => (
-        <Stack.Screen
-          key={name}
-          name={name}
-          getComponent={() => SCREENS[name].component}
-          options={{ headerShown: false }}
-        />
-      ))}
-    </Stack.Navigator>
-  </NavigationContainer>
+  // <NavigationContainer>
+  //   <Stack.Navigator
+  //     screenOptions={{
+  //       direction: I18nManager.isRTL ? 'rtl' : 'ltr',
+  //     }}>
+  //     <Stack.Screen
+  //       name="Main"
+  //       options={{ title: '📱 React Native Screens Examples' }}
+  //       component={MainScreen}
+  //     />
+  //     {Object.keys(SCREENS).map((name) => (
+  //       <Stack.Screen
+  //         key={name}
+  //         name={name}
+  //         getComponent={() => SCREENS[name].component}
+  //         options={{ headerShown: false }}
+  //       />
+  //     ))}
+  //   </Stack.Navigator>
+  // </NavigationContainer>
+  <BuggedStack />
+
 );
 
 const styles = StyleSheet.create({
